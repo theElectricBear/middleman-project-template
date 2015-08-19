@@ -11,12 +11,6 @@
 /.sass-cache
 /.cache
 
-# ignore bower components
-bower_components
-bower_components/*
-source/bower_components
-source/bower_components/*
-
 # ignore node_modules
 node_modules
 node_modules/*
@@ -26,8 +20,3 @@ node_modules/*
 
 # log files
 *.log
-
-# Ignore the build directory
-/build
-[branch "prod, stage"]
-!/build
