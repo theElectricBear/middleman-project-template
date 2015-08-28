@@ -1,0 +1,32 @@
+[
+  {
+    "name": "01",
+    "sections": [
+      {
+        "template": "one-col",
+        "headline": "page 1 section 1 headline",
+        "cta": "page 1 section 1 cta"
+      },
+      {
+        "template": "two-col",
+        "headline": "page 1 section 2 headline",
+        "cta": "page 1 section 2 cta"
+      }
+    ]
+  },
+  {
+    "name": "02",
+    "sections": [
+      {
+        "template": "two-col",
+        "headline": "page 2 section 1 headline",
+        "cta": "page 2 section 1 cta"
+      },
+      {
+        "template": "one-col",
+        "headline": "page 2 section 2 headline",
+        "cta": "page 2 section 2 cta"
+      }
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+/ if the hero is the same on every dynamic page, does not need to be defined for each page in pages.json
+= partial "partials/hero", locals: { page: page }
+- page.sections.each do |section|
+    = partial "templates/sections/#{section.template}", locals: { section: section }
