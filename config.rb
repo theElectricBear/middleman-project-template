@@ -37,6 +37,19 @@ data.pages.each do |page|
   proxy "/pages/#{page.name}.html", "/templates/page.html", :locals => { :page => page }, :ignore => true
 end
 
+# custom helper to render links to dynamic pages
+# https://middlemanapp.com/basics/helper_methods/#custom-defined-helpers
+helpers do
+  def dynamic_pages_links
+    html = "<ul>"
+    data.pages.each do |page|
+      html << "<li><a href='#{http_path}/pages/#{page.name}'>Page #{page.name}</a></li>"
+    end
+    html << "</ul>"
+    return html
+  end
+end
+
 ###
 # Helpers
 ###
@@ -55,13 +68,6 @@ configure :development do
     ]
 end
 
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
-
 # http://middlemanapp.com/basics/pretty-urls/
 activate :directory_indexes
 
@@ -71,11 +77,20 @@ after_configuration do
   sprockets.append_path File.join "#{root}", @bower_config["directory"]
 end
 
+# set default Middleman global path variables
+# current preference is for _path variables, see explanation below
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
 set :images_dir, 'images'
+
+# there is a bug with css_dir & js_dir being set in the build step
+# see https://github.com/middleman/middleman/issues/1585
+# use this in place of css_dir & js_dir in the templates to avoid issues
+# and to be consistent, use images_path instead of images_dir
+set :http_path, ''
+set :css_path, 'stylesheets'
+set :js_path, 'javascripts'
+set :images_path, 'images'
 
 # Build-specific configuration
 configure :build do
@@ -109,8 +124,17 @@ configure :build do
   # Use relative URLs
   # activate :relative_assets
 
-  # Or use a different image path
-  # set :http_prefix, "/Content/images/"
+  # set build directory name
+  set :build_dir, 'example'
+
+  # set http_prefix, used by the stylesheet_link_tag, javascript_include_tag, and image-url helpers
+  set :http_prefix, '/example/'
+
+  # update path helpers used in templates
+  set :http_path, '/example'
+  set :css_path, '/example/stylesheets'
+  set :js_path, '/example/javascripts'
+  set :images_path, '/example/images'
 
   # http://middlemanapp.com/advanced/file-size-optimization/#gzip-text-files
   activate :gzip
