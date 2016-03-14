@@ -48,6 +48,7 @@ end
 # custom helper to render links to dynamic pages
 # https://middlemanapp.com/basics/helper_methods/#custom-defined-helpers
 helpers do
+
   def dynamic_pages_links
     html = "<h3>Pages</h3>"
     html << "<ul>"
@@ -62,6 +63,43 @@ helpers do
     html << "</ul>"
     return html
   end
+
+  # if the data exists, output the html tag specified
+  def if_data_element (data, element, classes = "", data_attrs = "")
+    if data && !data.empty?
+      return "<#{element} class='#{classes}' #{data_attrs}>#{data}</#{element}>"
+    end
+  end
+
+  # if the data exists, output an img tag
+  def if_data_img (data, classes = "", data_attrs = "")
+    if data && !data.empty?
+      "<img src='#{images_path}/#{data}' class='#{classes}' #{data_attrs} />"
+    end
+  end
+
+  # if the data exists, output a list
+  def if_data_list (data, classes = "", data_attrs = "")
+    if data && !data.empty?
+      html = "<ul class='#{classes}' #{data_attrs}>"
+      data.each do |list_item|
+        html << "<li>#{list_item}</li>"
+      end
+      html << "</ul>"
+      return html
+    end
+  end
+
+  # if the data exists, output a button
+  def if_data_button (data, classes = "", data_attrs = "")
+    return "<button class='#{classes}' #{data_attrs}>#{data}</button>"
+  end
+
+  # if the data (link text) exists, output a link
+  def if_data_link (data, href, classes = "", data_attrs = "")
+    return "<a href='#{href}' class='#{classes}' #{data_attrs}>#{data}</a>"
+  end
+
 end
 
 ###
@@ -100,9 +138,9 @@ set :images_dir, 'images'
 # use this in place of css_dir & js_dir in the templates to avoid issues
 # and to be consistent, use images_path instead of images_dir
 set :http_path, ''
-set :css_path, 'stylesheets'
-set :js_path, 'javascripts'
-set :images_path, 'images'
+set :css_path, '/stylesheets'
+set :js_path, '/javascripts'
+set :images_path, '/images'
 
 # Build-specific configuration
 configure :build do
@@ -146,19 +184,43 @@ configure :build do
   # activate :relative_assets
 
   # set build directory name
-  set :build_dir, 'time-order-forms'
+  if ENV['build_dir']
+    set :build_dir, ENV['build_dir']
+  else
+    set :build_dir, "build"
+  end
+
+  # images_dir is used by compass image-url, so for background-image to work in sass files, this needs to be set
+  set :images_dir, '/images'
 
   # set http_prefix, used by the stylesheet_link_tag, javascript_include_tag, and image-url helpers
-  set :http_prefix, '/time-order-forms/'
+  set :http_prefix, '/'
 
   # update path helpers used in templates
-  set :http_path, '/time-order-forms'
-  set :css_path, '/time-order-forms/stylesheets'
-  set :js_path, '/time-order-forms/javascripts'
-  set :images_path, '/time-order-forms/images'
+  set :http_path, '/'
+  set :css_path, '/stylesheets'
+  set :js_path, '/javascripts'
+  set :images_path, '/images'
 
   # if a specific theme is being built
   if ENV['theme']
+
+    # set build directory name
+    set :build_dir, "#{ENV['theme']}"
+
+    # set http_prefix, used by the stylesheet_link_tag, javascript_include_tag, and image-url helpers
+    set :http_prefix, "/#{ENV['theme']}/"
+
+    # update path helpers used in templates
+    set :http_path, "/#{ENV['theme']}"
+    set :css_path, "/#{ENV['theme']}/stylesheets"
+    set :js_path, "/#{ENV['theme']}/javascripts"
+    set :images_path, "/#{ENV['theme']}/images"
+
+  end
+
+  # if a specific theme is being built AND will be deployed to html root on server
+  if ENV['theme'] && ENV['root']
 
     # set build directory name
     set :build_dir, "#{ENV['theme']}"
