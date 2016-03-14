@@ -8,7 +8,7 @@ end
 desc "Build the website from source"
 task :build do
   puts "## Building site"
-  # system("gulp build")
+  system("gulp build")
   status = system("bundle exec middleman build --clean")
   puts status ? "OK" : "FAILED"
 end

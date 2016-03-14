@@ -1,7 +1,7 @@
 [
   {
     "name": "index",
-    "title": "Time Order Forms",
+    "title": "Middleman Project Template",
     "sections": [
       {
         "template": "pages-links"
@@ -10,151 +10,95 @@
   },
   {
     "name": "index",
-    "title": "People Offer",
-    "theme": "people",
-    "body_class": "ppl-page_offer",
+    "title": "Theme 1 Index",
+    "theme": "theme1",
+    "body_class": "t1-page_index",
     "sections": [
       {
         "template": "one-col",
-        "headline": "Offer",
-        "cta": "page 1 section 1 cta"
+        "headline": "Section 1 Headline",
+        "cta": "theme1 index page section 1 cta"
       },
       {
         "template": "one-col",
-        "headline": "Offer 1 Details",
-        "cta": "page 1 section 1 cta"
+        "headline": "Section 2 Headline",
+        "cta": "theme1 index page section 2 cta"
       },
       {
         "template": "one-col",
-        "headline": "Offer 2 Details",
-        "cta": "page 1 section 1 cta"
+        "headline": "Section 3 Headline",
+        "cta": "theme1 index page section 3 cta"
       }
     ]
   },
   {
-    "name": "payment",
-    "title": "People Payment",
-    "theme": "people",
-    "body_class": "ppl-page_payment",
+    "name": "not-index",
+    "title": "Theme 2 Not Index",
+    "theme": "theme2",
+    "body_class": "t2-page_not-index",
     "sections": [
       {
-        "template": "two-col",
-        "headline": "Payment",
-        "cta": "page 2 section 1 cta"
-      }
-    ]
-  },
-  {
-    "name": "thank-you",
-    "title": "People Thank-you",
-    "theme": "people",
-    "body_class": "ppl-page_thank-you",
-    "sections": [
+        "template": "one-col",
+        "headline": "Section 1 Headline",
+        "cta": "theme2 not index page section 1 cta"
+      },
       {
-        "template": "two-col",
-        "headline": "Thank You!",
-        "cta": "page 2 section 1 cta"
+        "template": "one-col",
+        "headline": "Section 2 Headline",
+        "cta": "theme2 not index page section 2 cta"
+      },
+      {
+        "template": "one-col",
+        "headline": "Section 3 Headline",
+        "cta": "theme2 not index page section 3 cta"
       }
     ]
   },
   {
     "name": "index",
-    "title": "Entertainment Weekly Offer",
-    "theme": "entertainment-weekly",
-    "body_class": "ew-page_offer",
+    "title": "Theme 1 Subdir Test",
+    "sub_directory": "subdir-test",
+    "theme": "theme1",
+    "body_class": "t1-page_subdir-test",
     "sections": [
       {
         "template": "one-col",
-        "headline": "Offer",
-        "cta": "page 1 section 1 cta"
+        "headline": "Subdir Test Section 1 Headline",
+        "cta": "theme1 subdir test page section 1 cta"
       },
       {
         "template": "one-col",
-        "headline": "Offer 1 Details",
-        "cta": "page 1 section 1 cta"
+        "headline": "Subdir Test Section 2 Headline",
+        "cta": "theme1 subdir test page section 2 cta"
       },
       {
         "template": "one-col",
-        "headline": "Offer 2 Details",
-        "cta": "page 1 section 1 cta"
-      }
-    ]
-  },
-  {
-    "name": "payment",
-    "title": "Entertainment Weekly Payment",
-    "theme": "entertainment-weekly",
-    "body_class": "ew-page_payment",
-    "sections": [
-      {
-        "template": "two-col",
-        "headline": "Payment",
-        "cta": "page 2 section 1 cta"
-      }
-    ]
-  },
-  {
-    "name": "thank-you",
-    "title": "Entertainment Weekly Thank-you",
-    "theme": "entertainment-weekly",
-    "body_class": "ew-page_thank-you",
-    "sections": [
-      {
-        "template": "two-col",
-        "headline": "Thank You!",
-        "cta": "page 2 section 1 cta"
+        "headline": "Subdir Test Section 3 Headline",
+        "cta": "theme1 subdir test page section 3 cta"
       }
     ]
   },
   {
     "name": "index",
-    "title": "Entertainment Weekly Offer",
-    "sub_directory": "subdir-test",
-    "theme": "entertainment-weekly",
-    "body_class": "ew-page_offer",
+    "title": "Theme 1 Nested Subdir Test",
+    "sub_directory": "nested/subdir-test",
+    "theme": "theme1",
+    "body_class": "t1-page_nested-subdir-test",
     "sections": [
       {
         "template": "one-col",
-        "headline": "Offer",
-        "cta": "page 1 section 1 cta"
+        "headline": "Nested Subdir Test Section 1 Headline",
+        "cta": "theme1 nested subdir test page section 1 cta"
       },
       {
         "template": "one-col",
-        "headline": "Offer 1 Details",
-        "cta": "page 1 section 1 cta"
+        "headline": "Nested Subdir Test Section 2 Headline",
+        "cta": "theme1 nested subdir test page section 2 cta"
       },
       {
         "template": "one-col",
-        "headline": "Offer 2 Details",
-        "cta": "page 1 section 1 cta"
-      }
-    ]
-  },
-  {
-    "name": "payment",
-    "title": "Entertainment Weekly Payment",
-    "sub_directory": "subdir-test",
-    "theme": "entertainment-weekly",
-    "body_class": "ew-page_payment",
-    "sections": [
-      {
-        "template": "two-col",
-        "headline": "Payment",
-        "cta": "page 2 section 1 cta"
-      }
-    ]
-  },
-  {
-    "name": "thank-you",
-    "title": "Entertainment Weekly Thank-you",
-    "sub_directory": "subdir-test",
-    "theme": "entertainment-weekly",
-    "body_class": "ew-page_thank-you",
-    "sections": [
-      {
-        "template": "two-col",
-        "headline": "Thank You!",
-        "cta": "page 2 section 1 cta"
+        "headline": "Nested Subdir Test Section 3 Headline",
+        "cta": "theme1 nested subdir test page section 3 cta"
       }
     ]
   }

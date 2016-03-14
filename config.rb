@@ -53,11 +53,14 @@ helpers do
     html = "<h3>Pages</h3>"
     html << "<ul>"
     data.pages.each do |page|
-      if page.name == "index"
+      if page.name == "index" && !page.sub_directory && !page.theme
         html << ""
+      elsif page.name == "index"
+        sub_directory = page.sub_directory ? '/' + page.sub_directory + '/' : ''
+        html << "<li><a href='#{http_path}/#{page.theme}#{sub_directory}'>#{page.theme.titlecase} - #{page.name.titlecase}</a></li>"
       else
-        directory = page.directory ? '/' + page.directory : ''
-        html << "<li><a href='#{http_path}#{directory}/#{page.name}'>#{page.theme.titlecase} - #{page.name.titlecase}</a></li>"
+        sub_directory = page.sub_directory ? '/' + page.sub_directory + '/' : '/'
+        html << "<li><a href='#{http_path}/#{page.theme}#{sub_directory}#{page.name}'>#{page.theme.titlecase} - #{page.name.titlecase}</a></li>"
       end
     end
     html << "</ul>"
@@ -183,8 +186,10 @@ configure :build do
   # Use relative URLs
   # activate :relative_assets
 
-  # set build directory name
+  # build all themes
   if ENV['build_dir']
+    # set build directory name to the ENV VAR "build_dir"
+    # to define this during build step --> "rake build build_dir=build_dir_name"
     set :build_dir, ENV['build_dir']
   else
     set :build_dir, "build"
