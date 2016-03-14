@@ -1,31 +1,160 @@
 [
   {
-    "name": "01",
+    "name": "index",
+    "title": "Time Order Forms",
     "sections": [
       {
-        "template": "one-col",
-        "headline": "page 1 section 1 headline",
-        "cta": "page 1 section 1 cta"
-      },
-      {
-        "template": "two-col",
-        "headline": "page 1 section 2 headline",
-        "cta": "page 1 section 2 cta"
+        "template": "pages-links"
       }
     ]
   },
   {
-    "name": "02",
+    "name": "index",
+    "title": "People Offer",
+    "theme": "people",
+    "body_class": "ppl-page_offer",
     "sections": [
       {
-        "template": "two-col",
-        "headline": "page 2 section 1 headline",
-        "cta": "page 2 section 1 cta"
+        "template": "one-col",
+        "headline": "Offer",
+        "cta": "page 1 section 1 cta"
       },
       {
         "template": "one-col",
-        "headline": "page 2 section 2 headline",
-        "cta": "page 2 section 2 cta"
+        "headline": "Offer 1 Details",
+        "cta": "page 1 section 1 cta"
+      },
+      {
+        "template": "one-col",
+        "headline": "Offer 2 Details",
+        "cta": "page 1 section 1 cta"
+      }
+    ]
+  },
+  {
+    "name": "payment",
+    "title": "People Payment",
+    "theme": "people",
+    "body_class": "ppl-page_payment",
+    "sections": [
+      {
+        "template": "two-col",
+        "headline": "Payment",
+        "cta": "page 2 section 1 cta"
+      }
+    ]
+  },
+  {
+    "name": "thank-you",
+    "title": "People Thank-you",
+    "theme": "people",
+    "body_class": "ppl-page_thank-you",
+    "sections": [
+      {
+        "template": "two-col",
+        "headline": "Thank You!",
+        "cta": "page 2 section 1 cta"
+      }
+    ]
+  },
+  {
+    "name": "index",
+    "title": "Entertainment Weekly Offer",
+    "theme": "entertainment-weekly",
+    "body_class": "ew-page_offer",
+    "sections": [
+      {
+        "template": "one-col",
+        "headline": "Offer",
+        "cta": "page 1 section 1 cta"
+      },
+      {
+        "template": "one-col",
+        "headline": "Offer 1 Details",
+        "cta": "page 1 section 1 cta"
+      },
+      {
+        "template": "one-col",
+        "headline": "Offer 2 Details",
+        "cta": "page 1 section 1 cta"
+      }
+    ]
+  },
+  {
+    "name": "payment",
+    "title": "Entertainment Weekly Payment",
+    "theme": "entertainment-weekly",
+    "body_class": "ew-page_payment",
+    "sections": [
+      {
+        "template": "two-col",
+        "headline": "Payment",
+        "cta": "page 2 section 1 cta"
+      }
+    ]
+  },
+  {
+    "name": "thank-you",
+    "title": "Entertainment Weekly Thank-you",
+    "theme": "entertainment-weekly",
+    "body_class": "ew-page_thank-you",
+    "sections": [
+      {
+        "template": "two-col",
+        "headline": "Thank You!",
+        "cta": "page 2 section 1 cta"
+      }
+    ]
+  },
+  {
+    "name": "index",
+    "title": "Entertainment Weekly Offer",
+    "sub_directory": "subdir-test",
+    "theme": "entertainment-weekly",
+    "body_class": "ew-page_offer",
+    "sections": [
+      {
+        "template": "one-col",
+        "headline": "Offer",
+        "cta": "page 1 section 1 cta"
+      },
+      {
+        "template": "one-col",
+        "headline": "Offer 1 Details",
+        "cta": "page 1 section 1 cta"
+      },
+      {
+        "template": "one-col",
+        "headline": "Offer 2 Details",
+        "cta": "page 1 section 1 cta"
+      }
+    ]
+  },
+  {
+    "name": "payment",
+    "title": "Entertainment Weekly Payment",
+    "sub_directory": "subdir-test",
+    "theme": "entertainment-weekly",
+    "body_class": "ew-page_payment",
+    "sections": [
+      {
+        "template": "two-col",
+        "headline": "Payment",
+        "cta": "page 2 section 1 cta"
+      }
+    ]
+  },
+  {
+    "name": "thank-you",
+    "title": "Entertainment Weekly Thank-you",
+    "sub_directory": "subdir-test",
+    "theme": "entertainment-weekly",
+    "body_class": "ew-page_thank-you",
+    "sections": [
+      {
+        "template": "two-col",
+        "headline": "Thank You!",
+        "cta": "page 2 section 1 cta"
       }
     ]
   }

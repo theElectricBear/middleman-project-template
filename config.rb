@@ -5,9 +5,6 @@
 # Change Compass configuration
 # http://blachniet.com/2014/04/29/middleman-foundation/
 compass_config do |config|
-  # Require any additional compass plugins here.
-  config.add_import_path "bower_components/foundation/scss"
-
   config.output_style = :compact
 end
 
@@ -34,16 +31,33 @@ end
 
 # dynamic pages see https://middlemanapp.com/advanced/dynamic_pages/
 data.pages.each do |page|
-  proxy "/pages/#{page.name}.html", "/templates/page.html", :locals => { :page => page }, :ignore => true
+  # if the theme was defined on command line
+  # for example, rake build theme=<theme_name>
+  if ENV['theme']
+      if ENV['theme'] == page.theme
+        sub_directory = page.sub_directory ? '/' + page.sub_directory : ''
+        proxy "#{sub_directory}/#{page.name}.html", "/templates/page.html", :locals => { :page => page }, :ignore => true
+      end
+  else
+    sub_directory = page.sub_directory ? '/' + page.sub_directory : ''
+    theme = page.theme ? '/' + page.theme : ''
+    proxy "#{theme}#{sub_directory}/#{page.name}.html", "/templates/page.html", :locals => { :page => page }, :ignore => true
+  end
 end
 
 # custom helper to render links to dynamic pages
 # https://middlemanapp.com/basics/helper_methods/#custom-defined-helpers
 helpers do
   def dynamic_pages_links
-    html = "<ul>"
+    html = "<h3>Pages</h3>"
+    html << "<ul>"
     data.pages.each do |page|
-      html << "<li><a href='#{http_path}/pages/#{page.name}'>Page #{page.name}</a></li>"
+      if page.name == "index"
+        html << ""
+      else
+        directory = page.directory ? '/' + page.directory : ''
+        html << "<li><a href='#{http_path}#{directory}/#{page.name}'>#{page.theme.titlecase} - #{page.name.titlecase}</a></li>"
+      end
     end
     html << "</ul>"
     return html
@@ -62,7 +76,6 @@ end
 configure :development do
   activate :livereload
   config[:file_watcher_ignore] += [
-    /bower_components\//,
     /node_modules\//,
     /images\//
     ]
@@ -71,10 +84,9 @@ end
 # http://middlemanapp.com/basics/pretty-urls/
 activate :directory_indexes
 
-# Add bower's directory to sprockets asset path
+# Add node_modules's directory to sprockets asset path
 after_configuration do
-  @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
-  sprockets.append_path File.join "#{root}", @bower_config["directory"]
+  sprockets.append_path File.join "#{root}", "node_modules"
 end
 
 # set default Middleman global path variables
@@ -95,29 +107,38 @@ set :images_path, 'images'
 # Build-specific configuration
 configure :build do
 
+  ignore '*.md'
+
+  # uses ruby negative lookahead regex to ignore all js in themes dir
+  # except <theme_name>.*
+  # see https://github.com/middleman/middleman/issues/431
+  ignore %r{javascripts/themes/(?!#{ENV['theme']}).*$}
+
+  # ignore sass
+  ignore %r{stylesheets/themes/(?!#{ENV['theme']}).*$}
+
+  # ignore images
+  ignore %r{images/themes/(?!#{ENV['theme']}).*$}
+
   # For example, change the Compass output style for deployment
   activate :minify_css, ignore: [
-    'bower_components/*',
     'stylesheets/vendor/*'
   ]
 
   # Minify Javascript on build
   activate :minify_javascript, ignore: [
-    'javascripts/vendor/*',
-    'bower_components/*',
+    'javascripts/vendor/*'
   ]
 
   # Enable cache buster
   activate :asset_hash, ignore: [
     'javascripts/vendor/*',
-    'bower_components/*',
     'fonts/*',
     'images/*',
     'stylesheets/vendor/*'
   ]
 
   activate :autoprefixer, ignore: [
-    'bower_components/*',
     'stylesheets/vendor/*'
   ]
 
@@ -125,63 +146,38 @@ configure :build do
   # activate :relative_assets
 
   # set build directory name
-  set :build_dir, 'example'
+  set :build_dir, 'time-order-forms'
 
   # set http_prefix, used by the stylesheet_link_tag, javascript_include_tag, and image-url helpers
-  set :http_prefix, '/example/'
+  set :http_prefix, '/time-order-forms/'
 
   # update path helpers used in templates
-  set :http_path, '/example'
-  set :css_path, '/example/stylesheets'
-  set :js_path, '/example/javascripts'
-  set :images_path, '/example/images'
+  set :http_path, '/time-order-forms'
+  set :css_path, '/time-order-forms/stylesheets'
+  set :js_path, '/time-order-forms/javascripts'
+  set :images_path, '/time-order-forms/images'
+
+  # if a specific theme is being built
+  if ENV['theme']
+
+    # set build directory name
+    set :build_dir, "#{ENV['theme']}"
+
+    # set http_prefix, used by the stylesheet_link_tag, javascript_include_tag, and image-url helpers
+    set :http_prefix, "/"
+
+    # update path helpers used in templates
+    set :http_path, "/"
+    set :css_path, "/stylesheets"
+    set :js_path, "/javascripts"
+    set :images_path, "/images"
+
+  end
 
   # http://middlemanapp.com/advanced/file-size-optimization/#gzip-text-files
   activate :gzip
 
   # http://middlemanapp.com/advanced/file-size-optimization/#minify-html
-  activate :minify_html
-
-  # generate favicons
-  # https://github.com/follmann/middleman-favicon-maker
-  # https://css-tricks.com/favicon-quiz/
-  # https://www.npmjs.com/package/grunt-favicons
-  activate :favicon_maker, :icons => {
-    "images/favicons/_260x260_white_bg.png" => [
-    { icon: "favicon-196x196.png" },
-    { icon: "favicon-160x160.png" },
-    { icon: "favicon-96x96.png" },
-    { icon: "favicon-32x32.png" },
-    { icon: "favicon-16x16.png" },
-    { icon: "favicon.png", size: "64x64" },
-    { icon: "favicon.ico", size: "64x64,32x32,24x24,16x16" },
-    { icon: "apple-touch-icon-152x152.png" },
-    { icon: "apple-touch-icon-144x144.png" },
-    { icon: "apple-touch-icon-120x120.png" },
-    { icon: "apple-touch-icon-114x114.png" },
-    { icon: "apple-touch-icon-76x76.png" },
-    { icon: "apple-touch-icon-72x72.png" },
-    { icon: "apple-touch-icon-60x60.png" },
-    { icon: "apple-touch-icon-57x57.png" },
-    { icon: "apple-touch-icon.png", size: "57x57" },
-    { icon: "apple-touch-icon.png", size: "57x57" },
-    { icon: "firefox-icon-16x16.png", size: "16x16" },
-    { icon: "firefox-icon-30x30.png", size: "30x30" },
-    { icon: "firefox-icon-32x32.png", size: "32x32" },
-    { icon: "firefox-icon-48x48.png", size: "48x48" },
-    { icon: "firefox-icon-60x60.png", size: "60x60" },
-    { icon: "firefox-icon-64x64.png", size: "64x64" },
-    { icon: "firefox-icon-90x90.png", size: "90x90" },
-    { icon: "firefox-icon-120x120.png", size: "120x120" },
-    { icon: "firefox-icon-128x128.png", size: "128x128" },
-    { icon: "firefox-icon-256x256.png", size: "256x256" },
-    { icon: "mstile-70x70.png", size: "70x70" },
-    { icon: "mstile-144x144.png", size: "144x144" },
-    { icon: "mstile-150x150.png", size: "150x150" },
-    { icon: "mstile-310x310.png", size: "310x310" },
-    { icon: "mstile-310x150.png", size: "310x150" },
-    { icon: "windows-tile-144x144.png", size: "144x144"}
-    ]
-  }
+  # activate :minify_html
 
 end
