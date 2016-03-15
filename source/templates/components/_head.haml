@@ -7,5 +7,5 @@
 	%meta{:name => 'description', :content => ''}
 	%title= page.title
 
-	= stylesheet_link_tag("main", {media: false})
+	= stylesheet_link_tag("main", {media: false}) if !page.theme
 	= stylesheet_link_tag("themes/#{page.theme}", {media: false}) if page.theme

@@ -1,4 +1,7 @@
-// project wide common components
+// global sass
+@import "../main.scss";
+
+// project wide common components (that are theme specific ie not imported in main.scss)
 @import "../components/example";
 
 // theme specific
