@@ -1,0 +1,11 @@
+// this is an example of a project wide class being modified by the theme
+[class^='t2-page'] {
+    .ns_example-class {
+        background-color: grey;
+    }
+    .ns_bg-img-example {
+        width: 50px;
+        height: 50px;
+        background-image: image-url('themes/people/people-example.jpg');
+    }
+}
