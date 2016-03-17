@@ -55,14 +55,18 @@ helpers do
     data.pages.each do |page|
       if page.name == "index" && !page.sub_directory && !page.theme
         html << ""
-      elsif page.name == "index"
+      elsif page.name == "index" && !page.theme
         sub_directory = page.sub_directory ? '/' + page.sub_directory + '/' : ''
-        theme = page.theme ? page.theme : ""
-        html << "<li><a href='#{http_path}/#{theme}#{sub_directory}'>#{theme.titlecase} - #{page.name.titlecase}</a></li>"
+        html << "<li><a href='#{http_path}/#{sub_directory}'>#{page.name.titlecase}</a></li>"
+      elsif page.name == "index" && page.theme
+        sub_directory = page.sub_directory ? '/' + page.sub_directory + '/' : ''
+        html << "<li><a href='#{http_path}/#{page.theme}#{sub_directory}'>#{page.theme.titlecase} - #{page.name.titlecase}</a></li>"
+      elsif page.theme
+        sub_directory = page.sub_directory ? '/' + page.sub_directory + '/' : '/'
+        html << "<li><a href='#{http_path}/#{page.theme}#{sub_directory}#{page.name}'>#{page.theme.titlecase} - #{page.name.titlecase}</a></li>"
       else
         sub_directory = page.sub_directory ? '/' + page.sub_directory + '/' : '/'
-        theme = page.theme ? page.theme : ""
-        html << "<li><a href='#{http_path}/#{theme}#{sub_directory}#{page.name}'>#{theme.titlecase} - #{page.name.titlecase}</a></li>"
+        html << "<li><a href='#{http_path}#{sub_directory}#{page.name}'>#{page.name.titlecase}</a></li>"
       end
     end
     html << "</ul>"
