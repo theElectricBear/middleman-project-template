@@ -1,0 +1,116 @@
+:scss
+    .style-guide-heading {
+        font-size: 20px;
+        color: grey;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    .style-guide-sub-heading {
+        font-size: 16px;
+        color: #666;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .style-guide-divider {
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 1em 0;
+        padding: 0;
+        clear:both;
+        line-height: 0;
+        color: transparent;
+    }
+
+.row
+    .col-xs-12
+
+        / headings
+        .style-guide-heading HEADINGS
+        %h1 Heading 1
+        %h2 Heading 2
+        %h3 Heading 3
+        %h4 Heading 4
+        %h5 Heading 5
+        %h6 Heading 6
+
+        .style-guide-divider  
+
+        / links
+        .style-guide-heading ANCHOR TAGS
+        .style-guide-sub-heading Link
+        %a{:href => "#"} Link Text
+        .style-guide-sub-heading Phone Call
+        %a{:href => "tel:2063691919"} Call 206.369.1919
+        .style-guide-sub-heading Text Message
+        %a{:href => "sms:2063691919"} Text 206.369.1919
+        .style-guide-sub-heading Email
+        %a{:href => "mailto:dev@fellswoop.com"} dev@fellswoop.com
+
+        .style-guide-divider  
+
+        / strong tag
+        .style-guide-heading STRONG TAG
+        %p The word <strong>strong</strong> is wrapped in <strong>strong</strong> tags
+
+        .style-guide-divider  
+
+        / emphasis tag
+        .style-guide-heading EMPHASIS TAG
+        %p The word <em>emphasis</em> is wrapped in <em>emphasis</em> tags
+
+        .style-guide-divider  
+
+        / superscript and subscript tags
+        .style-guide-heading SUPERSCRIPT + SUBSCRIPT
+        %p This is a <sup>superscript</sup> and this is a <sub>subscript</sub>
+
+        .style-guide-divider  
+
+        / citation tag
+        .style-guide-heading CITATION
+        %cite This is wrapped in cite tags
+
+        .style-guide-divider  
+
+        / abbreviation tag
+        .style-guide-heading ABBREVIATION
+        %abbr{:title => "Avenue"} AVE
+
+        .style-guide-divider  
+
+        / pre tag
+        .style-guide-heading PRE TAG
+        %pre
+            :preserve
+                This
+                    text's
+                        whitespace
+                            is
+                                preserved.
+
+        .style-guide-divider  
+
+        / code tag
+        .style-guide-heading CODE TAG
+        %code
+            :preserve
+                var func = function(name) {
+                    console.log(name);
+                }
+
+        .style-guide-divider  
+
+        / blockquote
+        .style-guide-heading BLOCKQUOTE
+        %blockquote Pitchfork accusamus echo park portland, mcsweeney's marfa sapiente beard
+
+        .style-guide-divider  
+
+        / mark tag
+        .style-guide-heading MARK
+        %p The word <mark>mark</mark> is wrapped in <mark>mark</mark> tags
+
+        .style-guide-divider  
+

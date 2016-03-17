@@ -57,10 +57,12 @@ helpers do
         html << ""
       elsif page.name == "index"
         sub_directory = page.sub_directory ? '/' + page.sub_directory + '/' : ''
-        html << "<li><a href='#{http_path}/#{page.theme}#{sub_directory}'>#{page.theme.titlecase} - #{page.name.titlecase}</a></li>"
+        theme = page.theme ? page.theme : ""
+        html << "<li><a href='#{http_path}/#{theme}#{sub_directory}'>#{theme.titlecase} - #{page.name.titlecase}</a></li>"
       else
         sub_directory = page.sub_directory ? '/' + page.sub_directory + '/' : '/'
-        html << "<li><a href='#{http_path}/#{page.theme}#{sub_directory}#{page.name}'>#{page.theme.titlecase} - #{page.name.titlecase}</a></li>"
+        theme = page.theme ? page.theme : ""
+        html << "<li><a href='#{http_path}/#{theme}#{sub_directory}#{page.name}'>#{theme.titlecase} - #{page.name.titlecase}</a></li>"
       end
     end
     html << "</ul>"
