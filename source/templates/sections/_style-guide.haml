@@ -3,7 +3,7 @@
         font-size: 20px;
         color: grey;
         font-weight: bold;
-        margin-top: 10px;
+        margin-top: 20px;
         margin-bottom: 5px;
     }
     .style-guide-sub-heading {
@@ -16,11 +16,14 @@
         height: 1px;
         border: 0;
         border-top: 1px solid #ccc;
-        margin: 1em 0;
+        margin: 30px 0;
         padding: 0;
         clear:both;
         line-height: 0;
         color: transparent;
+    }
+    .style-guide-form-element {
+
     }
 
 .row
@@ -192,3 +195,239 @@
 
         .style-guide-divider  
 
+        / form elements
+        .style-guide-heading FORM ELEMENTS
+        %form
+            %fieldset
+
+                %legend Legend
+
+                / text input
+                .style-guide-form-element
+                    %label Text
+                    %input{:name => "", :placeholder => "enter text", :type => "text", :value => ""}
+
+                / autofocus text input
+                .style-guide-form-element
+                    %label Text - Autofocus
+                    %input{:autofocus => "", :name => "", :placeholder => "enter text", :type => "text", :value => ""}
+
+                / required text input
+                .style-guide-form-element
+                    %label Text - Required
+                    %input{:name => "", :placeholder => "enter text", :required => "", :type => "text", :value => ""}
+
+                / disabled text input
+                .style-guide-form-element
+                    %label Text - Disabled
+                    %input{:disabled => "disabled", :name => "", :placeholder => "enter text", :type => "text", :value => ""}
+
+                / email input
+                .style-guide-form-element
+                    %label Email
+                    %input{:name => "", :placeholder => "your@email.com", :type => "email", :value => ""}
+
+                / password input
+                .style-guide-form-element
+                    %label Password
+                    %input{:name => "", :placeholder => "enter password", :type => "password", :value => ""}
+
+                / search input
+                .style-guide-form-element
+                    %label Search
+                    %input{:name => "", :placeholder => "search here", :type => "search", :value => ""}
+
+                / datetime input
+                .style-guide-form-element
+                    %label Datetime
+                    %input{:name => "", :placeholder => "datetime here", :type => "datetime", :value => ""}
+
+                / datetime-local input
+                .style-guide-form-element
+                    %label Datetime-Local
+                    %input{:name => "", :placeholder => "datetime-local here", :type => "datetime-local", :value => ""}
+
+                / date input
+                .style-guide-form-element
+                    %label Date
+                    %input{:name => "", :placeholder => "date here", :type => "date", :value => ""}
+
+                / month input
+                .style-guide-form-element
+                    %label Month
+                    %input{:name => "", :placeholder => "month here", :type => "month", :value => ""}
+
+                / time input
+                .style-guide-form-element
+                    %label Time
+                    %input{:name => "", :placeholder => "time here", :type => "time", :value => ""}
+
+                / week input
+                .style-guide-form-element
+                    %label Week
+                    %input{:name => "", :placeholder => "week here", :type => "week", :value => ""}
+
+                / number input
+                .style-guide-form-element
+                    %label Number
+                    %input{:name => "", :placeholder => "number here", :type => "number", :value => ""}
+
+                / min number input
+                .style-guide-form-element
+                    %label Number - Min 5
+                    %input{:min => "5", :name => "", :placeholder => "number here", :type => "number", :value => ""}
+
+                / max number input
+                .style-guide-form-element
+                    %label Number - Max 5
+                    %input{:max => "5", :name => "", :placeholder => "number here", :type => "number", :value => ""}
+
+                / url input
+                .style-guide-form-element
+                    %label URL
+                    %input{:name => "", :placeholder => "url here", :type => "url", :value => ""}
+
+                / tel input
+                .style-guide-form-element
+                    %label Phone Number
+                    %input{:name => "", :placeholder => "phone number here", :type => "tel", :value => ""}
+
+                / color input
+                .style-guide-form-element
+                    %label Color
+                    %input{:name => "", :placeholder => "color here", :type => "color", :value => ""}
+
+                / range input
+                / http://css-tricks.com/value-bubbles-for-range-inputs/
+                .style-guide-form-element
+                    %label Range
+                    %input{:list => "numbers", :max => "100", :min => "0", :type => "range", :value => "0"}
+                    %datalist#numbers
+                        %option 25
+                        %option 50
+                        %option 75
+
+                / file input
+                .style-guide-form-element
+                    %label File
+                    %input{:name => "", :type => "file"}
+                    .style-guide-form-element
+                    %label Multiple Files
+                    %input{:multiple => "multiple", :name => "", :type => "file"}
+
+                / textarea
+                .style-guide-form-element
+                    %label Textarea
+                    %textarea#text_area{:placeholder => "type something..."}
+
+                / textarea
+                .style-guide-form-element
+                    %label Textarea - Maxlength is 20 Characters
+                    %textarea#text_area{:maxlength => "20", :placeholder => "type something..."}
+
+                / progress element
+                .style-guide-form-element
+                    %label Progress Element
+                    %progress{:max => "100", :value => "40"}
+
+                / indeterminate progress element
+                .style-guide-form-element
+                    %label Indeterminate Progress Element
+                    %progress{:max => "100"}
+
+                / meter element
+                .style-guide-form-element
+                    %label Meter Element
+                    %meter{:high => "60", :low => "30", :max => "100", :min => "0", :optimum => "100", :value => "80"}
+
+                / datalist element
+                .style-guide-form-element
+                    %label Datalist Element - Pick Your Favorite Fruit
+                    %input{:list => "fruits", :type => "text", :value => ""}
+                    %datalist#fruits
+                        %option{:value => "Apple"}
+                        %option{:value => "Orange"}
+                        %option{:value => "Peach"}
+
+                / select element
+                .style-guide-form-element
+                    %label Select
+                    %select#the_select{:name => ""}
+                        %optgroup{:label => "label 1"}
+                            %option{:value => "1"} Option 1
+                            %option{:value => "2"} Option 2
+                            %option{:value => "3"} Option 3
+                        %optgroup{:label => "label 2"}
+                            %option{:value => "4"} Option 4
+                            %option{:value => "5"} Option 5
+                            %option{:value => "6"} Option 6
+
+                / radio buttons
+                .style-guide-form-element
+                    %label Radio
+                    %input{:name => "style-guide-radio-button", :type => "radio", :value => "value"}
+                    %input{:name => "style-guide-radio-button", :type => "radio", :value => "value"}
+
+                / checkboxes
+                .style-guide-form-element
+                    %label Checkbox
+                    %input{:name => "", :type => "checkbox", :value => "value"}
+                    %input{:name => "", :type => "checkbox", :value => "value"}
+                    %input{:name => "", :type => "checkbox", :value => "value"}
+
+                / button
+                .style-guide-form-element
+                    %label Button Input Type
+                    %input{:type => "button", :value => "Button"}
+
+                / submit button
+                .style-guide-form-element
+                    %label Submit
+                    %input{:type => "submit", :value => "Submit"}
+
+                / reset button
+                .style-guide-form-element
+                    %label Reset
+                    %input{:type => "reset", :value => "Reset"}
+
+        / divider
+        .style-guide-divider
+
+        / buttons
+        .style-guide-heading BUTTON
+        %button Button Text
+        .style-guide-heading DISABLED BUTTON
+        %button{:disabled => "disabled"} Button Text
+
+        / divider
+        .style-guide-divider
+
+        / image tag
+        .style-guide-heading IMAGE
+        %img{:alt => "Placeholder image", :src => "http://placehold.it/350x150", :width => "350", :height => "150"}
+
+        / divider
+        .style-guide-divider  
+
+        / figure and figcaption tags
+        .style-guide-heading FIGURE + FIGCAPTION
+        %figure
+            %img{:alt => "Placeholder image", :src => "http://placehold.it/350x150", :width => "350", :height => "150"}
+            %figcaption This is the figcaption that describes the image
+
+        / divider
+        .style-guide-divider  
+
+        / video tag
+        .style-guide-heading VIDEO
+        %video{:controls => true, :poster => "http://placehold.it/350x150"}
+            %source{:src => "videos/shovels-and-rope-bad-luck.webm", :type => "video/webm; codecs=\"vp8, vorbis\""}
+            %source{:src => "videos/shovels-and-rope-bad-luck.mp4", :type => "video/mp4"}
+
+        / divider
+        .style-guide-divider  
+
+        / audio tag
+        .style-guide-heading AUDIO
+        %audio{:controls => true}
+            %source{:src => "audio/shovels-and-rope-gasoline.mp3", :type => "audio/mpeg; codecs=\"mp3\""}
