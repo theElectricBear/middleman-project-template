@@ -114,3 +114,81 @@
 
         .style-guide-divider  
 
+        / paragraph tag
+        .style-guide-heading PARAGRAPH
+        %p Sustainable quinoa officia scenester truffaut. Sapiente magna ennui, officia freegan master cleanse single-origin coffee est umami sustainable. Mollit selvage sunt, adipisicing pour-over authentic iphone. Authentic hella qui dolor.
+        %p Locavore future seitan magna +1 organic Austin. Yr incididunt consequat, etsy freegan williamsburg eu. Godard echo park duis pariatur photo booth mixtape, commodo Austin.
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem omnis provident dignissimos sit vero, eius modi. Fuga sint natus quod itaque earum. Reprehenderit veniam cum excepturi omnis fugiat! Aspernatur, explicabo.
+
+        .style-guide-divider  
+
+        / term + definition list
+        .style-guide-heading TERM + DEFINITION LIST
+        %dl
+            %dt Definition Term
+            %dd This is the definition of "Definition Term"
+            %dt Another Definition Term
+            %dd This is the definition of "Another Definition Term"
+
+        .style-guide-divider  
+
+        / ordered list
+        .style-guide-heading ORDERED LIST
+        %ol
+            %li List Item 1
+            %li List Item 2
+            %li List Item 3
+
+        .style-guide-divider  
+
+        / unordered list
+        .style-guide-heading UNORDERED LIST
+        %ul
+            %li List Item 1
+            %li List Item 2
+            %li List Item 3
+
+        .style-guide-divider  
+
+        / details + summary tag
+        .style-guide-heading DETAILS
+        %details
+            %summary This is the summary 1
+            %p This is some text that should not displayed when the page loads
+        %details{:open => true}
+            %summary This is the summary 2
+            %p This is some text that should displayed when the page loads
+        %details
+            %summary This is the summary 3
+            %p This is some text that should not displayed when the page loads
+
+        .style-guide-divider  
+
+        / horizontal row tag
+        .style-guide-heading HORIZONTAL ROW
+        %hr/
+
+        .style-guide-divider  
+
+        / table
+        .style-guide-heading TABLE
+        %table
+            %tr
+                %th Table Header
+                %th Table Header
+                %th Table Header
+            %tr
+                %td Table Data
+                %td Table Data
+                %td Table Data
+            %tr
+                %td Table Data
+                %td Table Data
+                %td Table Data
+            %tr
+                %td Table Data
+                %td Table Data
+                %td Table Data
+
+        .style-guide-divider  
+
