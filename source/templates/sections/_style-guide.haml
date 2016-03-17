@@ -25,6 +25,9 @@
     .style-guide-form-element {
 
     }
+    .style-guide-footer-spacer {
+        height: 60px;
+    }
 
 .row
     .col-xs-12
@@ -38,7 +41,15 @@
         %h5 Heading 5
         %h6 Heading 6
 
-        .style-guide-divider  
+        .style-guide-divider
+
+        / paragraph tag
+        .style-guide-heading PARAGRAPH
+        %p Sustainable quinoa officia scenester truffaut. Sapiente magna ennui, officia freegan master cleanse single-origin coffee est umami sustainable. Mollit selvage sunt, adipisicing pour-over authentic iphone. Authentic hella qui dolor.
+        %p Locavore future seitan magna +1 organic Austin. Yr incididunt consequat, etsy freegan williamsburg eu. Godard echo park duis pariatur photo booth mixtape, commodo Austin.
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem omnis provident dignissimos sit vero, eius modi. Fuga sint natus quod itaque earum. Reprehenderit veniam cum excepturi omnis fugiat! Aspernatur, explicabo.
+
+        .style-guide-divider   
 
         / links
         .style-guide-heading ANCHOR TAGS
@@ -51,7 +62,34 @@
         .style-guide-sub-heading Email
         %a{:href => "mailto:dev@fellswoop.com"} dev@fellswoop.com
 
+        / divider
+        .style-guide-divider
+
+        / buttons
+        .style-guide-heading BUTTON
+        %button Button Text
+        .style-guide-heading DISABLED BUTTON
+        %button{:disabled => "disabled"} Button Text
+
+        .style-guide-divider 
+
+        / ordered list
+        .style-guide-heading ORDERED LIST
+        %ol
+            %li List Item 1
+            %li List Item 2
+            %li List Item 3
+
         .style-guide-divider  
+
+        / unordered list
+        .style-guide-heading UNORDERED LIST
+        %ul
+            %li List Item 1
+            %li List Item 2
+            %li List Item 3
+
+        .style-guide-divider
 
         / strong tag
         .style-guide-heading STRONG TAG
@@ -68,6 +106,12 @@
         / superscript and subscript tags
         .style-guide-heading SUPERSCRIPT + SUBSCRIPT
         %p This is a <sup>superscript</sup> and this is a <sub>subscript</sub>
+
+        .style-guide-divider  
+
+        / blockquote
+        .style-guide-heading BLOCKQUOTE
+        %blockquote Pitchfork accusamus echo park portland, mcsweeney's marfa sapiente beard
 
         .style-guide-divider  
 
@@ -105,26 +149,6 @@
 
         .style-guide-divider  
 
-        / blockquote
-        .style-guide-heading BLOCKQUOTE
-        %blockquote Pitchfork accusamus echo park portland, mcsweeney's marfa sapiente beard
-
-        .style-guide-divider  
-
-        / mark tag
-        .style-guide-heading MARK
-        %p The word <mark>mark</mark> is wrapped in <mark>mark</mark> tags
-
-        .style-guide-divider  
-
-        / paragraph tag
-        .style-guide-heading PARAGRAPH
-        %p Sustainable quinoa officia scenester truffaut. Sapiente magna ennui, officia freegan master cleanse single-origin coffee est umami sustainable. Mollit selvage sunt, adipisicing pour-over authentic iphone. Authentic hella qui dolor.
-        %p Locavore future seitan magna +1 organic Austin. Yr incididunt consequat, etsy freegan williamsburg eu. Godard echo park duis pariatur photo booth mixtape, commodo Austin.
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem omnis provident dignissimos sit vero, eius modi. Fuga sint natus quod itaque earum. Reprehenderit veniam cum excepturi omnis fugiat! Aspernatur, explicabo.
-
-        .style-guide-divider  
-
         / term + definition list
         .style-guide-heading TERM + DEFINITION LIST
         %dl
@@ -132,24 +156,6 @@
             %dd This is the definition of "Definition Term"
             %dt Another Definition Term
             %dd This is the definition of "Another Definition Term"
-
-        .style-guide-divider  
-
-        / ordered list
-        .style-guide-heading ORDERED LIST
-        %ol
-            %li List Item 1
-            %li List Item 2
-            %li List Item 3
-
-        .style-guide-divider  
-
-        / unordered list
-        .style-guide-heading UNORDERED LIST
-        %ul
-            %li List Item 1
-            %li List Item 2
-            %li List Item 3
 
         .style-guide-divider  
 
@@ -393,15 +399,6 @@
         / divider
         .style-guide-divider
 
-        / buttons
-        .style-guide-heading BUTTON
-        %button Button Text
-        .style-guide-heading DISABLED BUTTON
-        %button{:disabled => "disabled"} Button Text
-
-        / divider
-        .style-guide-divider
-
         / image tag
         .style-guide-heading IMAGE
         %img{:alt => "Placeholder image", :src => "http://placehold.it/350x150", :width => "350", :height => "150"}
@@ -414,3 +411,5 @@
         %figure
             %img{:alt => "Placeholder image", :src => "http://placehold.it/350x150", :width => "350", :height => "150"}
             %figcaption This is the figcaption that describes the image
+
+        .style-guide-footer-spacer
