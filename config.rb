@@ -52,20 +52,21 @@ helpers do
   def dynamic_pages_links
     html = "<h3>Pages</h3>"
     html << "<ul>"
+    # this for reals needs to be refactored at some point
     data.pages.each do |page|
       if page.name == "index" && !page.sub_directory && !page.theme
         html << ""
       elsif page.name == "index" && !page.theme
         sub_directory = page.sub_directory ? '/' + page.sub_directory + '/' : ''
-        html << "<li><a href='#{http_path}/#{sub_directory}'>#{page.name.titlecase}</a></li>"
+        html << "<li><a href='#{http_path}#{sub_directory}'>#{page.name.titlecase}</a></li>"
       elsif page.name == "index" && page.theme
         sub_directory = page.sub_directory ? '/' + page.sub_directory + '/' : ''
-        html << "<li><a href='#{http_path}/#{page.theme}#{sub_directory}'>#{page.theme.titlecase} - #{page.name.titlecase}</a></li>"
+        html << "<li><a href='#{http_path}#{page.theme}#{sub_directory}'>#{page.theme.titlecase} - #{page.name.titlecase}</a></li>"
       elsif page.theme
         sub_directory = page.sub_directory ? '/' + page.sub_directory + '/' : '/'
-        html << "<li><a href='#{http_path}/#{page.theme}#{sub_directory}#{page.name}'>#{page.theme.titlecase} - #{page.name.titlecase}</a></li>"
+        html << "<li><a href='#{http_path}#{page.theme}#{sub_directory}#{page.name}'>#{page.theme.titlecase} - #{page.name.titlecase}</a></li>"
       else
-        sub_directory = page.sub_directory ? '/' + page.sub_directory + '/' : '/'
+        sub_directory = page.sub_directory ? '/' + page.sub_directory + '/' : ''
         html << "<li><a href='#{http_path}#{sub_directory}#{page.name}'>#{page.name.titlecase}</a></li>"
       end
     end
