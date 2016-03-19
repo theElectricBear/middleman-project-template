@@ -22,6 +22,8 @@
     "title": "Theme 1 Index",
     "theme": "theme1",
     "body_class": "t1-page_index",
+    "header": "templates/components/header-alt",
+    "footer": "templates/components/footer-alt",
     "sections": [
       {
         "template": "one-col",

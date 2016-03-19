@@ -3,11 +3,13 @@
 %body{class: "#{page.body_class}"}
     .container
 
-        = partial "templates/components/header", locals: { page: page }
+        - header = page.header ? page.header : "templates/components/header"
+        = partial header, locals: { page: page }
 
         - page.sections.each do |section|
             = partial "templates/sections/#{section.template}", locals: { section: section }
 
-        = partial "templates/components/footer", locals: { page: page }
+        - footer = page.footer ? page.footer : "templates/components/footer"
+        = partial footer, locals: { page: page }
 
 = partial "templates/components/foot", locals: { page: page }
