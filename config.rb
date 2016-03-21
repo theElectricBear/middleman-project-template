@@ -6,7 +6,6 @@
 # http://blachniet.com/2014/04/29/middleman-foundation/
 compass_config do |config|
   config.output_style = :compact
-  config.project_path = "/Users/shae/repos/middleman-project-template"
 end
 
 ###
