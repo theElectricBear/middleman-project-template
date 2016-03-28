@@ -1,31 +1,115 @@
 [
   {
-    "name": "01",
+    "name": "index",
+    "title": "Middleman Project Template",
     "sections": [
       {
-        "template": "one-col",
-        "headline": "page 1 section 1 headline",
-        "cta": "page 1 section 1 cta"
-      },
-      {
-        "template": "two-col",
-        "headline": "page 1 section 2 headline",
-        "cta": "page 1 section 2 cta"
+        "template": "pages-links"
       }
     ]
   },
   {
-    "name": "02",
+    "name": "style-guide",
+    "title": "Middleman Project Template Style Guide",
     "sections": [
       {
-        "template": "two-col",
-        "headline": "page 2 section 1 headline",
-        "cta": "page 2 section 1 cta"
+        "template": "style-guide"
+      }
+    ]
+  },
+  {
+    "name": "index",
+    "title": "Theme 1 Index",
+    "theme": "theme1",
+    "body_class": "t1-page_index",
+    "header": "templates/components/header-alt",
+    "footer": "templates/components/footer-alt",
+    "sections": [
+      {
+        "template": "one-col",
+        "headline": "Section 1 Headline",
+        "cta": "theme1 index page section 1 cta"
       },
       {
         "template": "one-col",
-        "headline": "page 2 section 2 headline",
-        "cta": "page 2 section 2 cta"
+        "headline": "Section 2 Headline",
+        "cta": "theme1 index page section 2 cta"
+      },
+      {
+        "template": "one-col",
+        "headline": "Section 3 Headline",
+        "cta": "theme1 index page section 3 cta"
+      }
+    ]
+  },
+  {
+    "name": "not-index",
+    "title": "Theme 2 Not Index",
+    "theme": "theme2",
+    "body_class": "t2-page_not-index",
+    "sections": [
+      {
+        "template": "one-col",
+        "headline": "Section 1 Headline",
+        "cta": "theme2 not index page section 1 cta"
+      },
+      {
+        "template": "one-col",
+        "headline": "Section 2 Headline",
+        "cta": "theme2 not index page section 2 cta"
+      },
+      {
+        "template": "one-col",
+        "headline": "Section 3 Headline",
+        "cta": "theme2 not index page section 3 cta"
+      }
+    ]
+  },
+  {
+    "name": "index",
+    "title": "Theme 1 Subdir Test",
+    "sub_directory": "subdir-test",
+    "theme": "theme1",
+    "body_class": "t1-page_subdir-test",
+    "sections": [
+      {
+        "template": "one-col",
+        "headline": "Subdir Test Section 1 Headline",
+        "cta": "theme1 subdir test page section 1 cta"
+      },
+      {
+        "template": "one-col",
+        "headline": "Subdir Test Section 2 Headline",
+        "cta": "theme1 subdir test page section 2 cta"
+      },
+      {
+        "template": "one-col",
+        "headline": "Subdir Test Section 3 Headline",
+        "cta": "theme1 subdir test page section 3 cta"
+      }
+    ]
+  },
+  {
+    "name": "index",
+    "title": "Theme 1 Nested Subdir Test",
+    "sub_directory": "nested/subdir-test",
+    "theme": "theme1",
+    "body_class": "t1-page_nested-subdir-test",
+    "sections": [
+      {
+        "template": "one-col",
+        "headline": "Nested Subdir Test Section 1 Headline",
+        "cta": "theme1 nested subdir test page section 1 cta"
+      },
+      {
+        "template": "one-col",
+        "headline": "Nested Subdir Test Section 2 Headline",
+        "cta": "theme1 nested subdir test page section 2 cta"
+      },
+      {
+        "template": "one-col",
+        "headline": "Nested Subdir Test Section 3 Headline",
+        "cta": "theme1 nested subdir test page section 3 cta"
       }
     ]
   }
