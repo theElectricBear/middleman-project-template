@@ -12,8 +12,7 @@
 /.cache
 
 # ignore node_modules
-node_modules
-node_modules/*
+node_modules/
 
 # Ignore .DS_store file
 .DS_Store
@@ -22,11 +21,6 @@ node_modules/*
 *.log
 
 # ignore build dirs
-build
-build/*
-time-order-forms
-time-order-forms/*
-people
-people/*
-entertainment-weekly
-entertainment-weekly/*
+build/
+theme1/
+theme2/

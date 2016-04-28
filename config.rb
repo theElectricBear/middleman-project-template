@@ -31,6 +31,8 @@ end
 
 # dynamic pages see https://middlemanapp.com/advanced/dynamic_pages/
 data.pages.each do |page|
+  # when page.json is get in the data/pages directory, Middleman adds the file name as the zeroth item in an array, with the content of page.json as the first item
+  page = page[1]
   # if the theme was defined on command line
   # for example, rake build theme=<theme_name>
   if ENV['theme']
@@ -54,6 +56,8 @@ helpers do
     html << "<ul>"
     # this for reals needs to be refactored at some point
     data.pages.each do |page|
+      # when page.json is get in the data/pages directory, Middleman adds the file name as the zeroth item in an array, with the content of page.json as the first item
+      page = page[1]
       if page.name == "index" && !page.sub_directory && !page.theme
         html << ""
       elsif page.name == "index" && !page.theme

@@ -1,0 +1,24 @@
+{
+  "name": "index",
+  "title": "Theme 1 Subdir Test",
+  "sub_directory": "subdir-test",
+  "theme": "theme1",
+  "body_class": "t1-page_subdir-test",
+  "sections": [
+    {
+      "template": "one-col",
+      "headline": "Subdir Test Section 1 Headline",
+      "cta": "theme1 subdir test page section 1 cta"
+    },
+    {
+      "template": "one-col",
+      "headline": "Subdir Test Section 2 Headline",
+      "cta": "theme1 subdir test page section 2 cta"
+    },
+    {
+      "template": "one-col",
+      "headline": "Subdir Test Section 3 Headline",
+      "cta": "theme1 subdir test page section 3 cta"
+    }
+  ]
+}

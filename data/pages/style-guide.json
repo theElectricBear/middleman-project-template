@@ -1,0 +1,9 @@
+{
+  "name": "style-guide",
+  "title": "Middleman Project Template Style Guide",
+  "sections": [
+    {
+      "template": "style-guide"
+    }
+  ]
+}

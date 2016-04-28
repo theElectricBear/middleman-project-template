@@ -1,0 +1,9 @@
+{
+  "name": "index",
+  "title": "Middleman Project Template",
+  "sections": [
+    {
+      "template": "pages-links"
+    }
+  ]
+}

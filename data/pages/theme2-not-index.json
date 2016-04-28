@@ -1,0 +1,23 @@
+{
+  "name": "not-index",
+  "title": "Theme 2 Not Index",
+  "theme": "theme2",
+  "body_class": "t2-page_not-index",
+  "sections": [
+    {
+      "template": "one-col",
+      "headline": "Section 1 Headline",
+      "cta": "theme2 not index page section 1 cta"
+    },
+    {
+      "template": "one-col",
+      "headline": "Section 2 Headline",
+      "cta": "theme2 not index page section 2 cta"
+    },
+    {
+      "template": "one-col",
+      "headline": "Section 3 Headline",
+      "cta": "theme2 not index page section 3 cta"
+    }
+  ]
+}

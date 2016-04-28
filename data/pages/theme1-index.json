@@ -1,0 +1,25 @@
+{
+  "name": "index",
+  "title": "Theme 1 Index",
+  "theme": "theme1",
+  "body_class": "t1-page_index",
+  "header": "templates/components/header-alt",
+  "footer": "templates/components/footer-alt",
+  "sections": [
+    {
+      "template": "one-col",
+      "headline": "Section 1 Headline",
+      "cta": "theme1 index page section 1 cta"
+    },
+    {
+      "template": "one-col",
+      "headline": "Section 2 Headline",
+      "cta": "theme1 index page section 2 cta"
+    },
+    {
+      "template": "one-col",
+      "headline": "Section 3 Headline",
+      "cta": "theme1 index page section 3 cta"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "index",
+  "title": "Theme 1 Nested Subdir Test",
+  "sub_directory": "nested/subdir-test",
+  "theme": "theme1",
+  "body_class": "t1-page_nested-subdir-test",
+  "sections": [
+    {
+      "template": "one-col",
+      "headline": "Nested Subdir Test Section 1 Headline",
+      "cta": "theme1 nested subdir test page section 1 cta"
+    },
+    {
+      "template": "one-col",
+      "headline": "Nested Subdir Test Section 2 Headline",
+      "cta": "theme1 nested subdir test page section 2 cta"
+    },
+    {
+      "template": "one-col",
+      "headline": "Nested Subdir Test Section 3 Headline",
+      "cta": "theme1 nested subdir test page section 3 cta"
+    }
+  ]
+}
