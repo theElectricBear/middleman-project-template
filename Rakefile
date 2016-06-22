@@ -1,8 +1,8 @@
 # http://scottwb.com/blog/2012/02/24/middleman-deployment-rakefile/
 
-desc "Run the preview server at http://localhost:4567"
+desc "Run the preview server at http://localhost:9000"
 task :preview do
-  system("bundle exec middleman server")
+  system("bundle exec middleman server -p 9000")
 end
 
 desc "Build the website from source"
