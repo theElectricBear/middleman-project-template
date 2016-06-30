@@ -6,10 +6,12 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
+    "gulp-imagemin": "^3.0.1",
     "gulp-util": "^3.0.7"
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.6",
+    "imagemin-pngquant": "^5.0.0",
     "jquery": "^2.2.0"
   }
 }

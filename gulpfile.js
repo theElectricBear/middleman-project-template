@@ -1,8 +1,15 @@
-var fs = require('fs');
-var gulp = require('gulp');
-var clean = require('gulp-clean');
-var util = require('gulp-util');
+var fs = require('fs'),
+    gulp = require('gulp'),
+    clean = require('gulp-clean'),
+    util = require('gulp-util'),
+    imagemin = require('gulp-imagemin'),
+    pngquant = require('imagemin-pngquant');
 // util.log('log this');
+
+var paths = {
+  'imgSrc': './source/images/**/*',
+  'imgDest': './source/images',
+};
 
 // http://stackoverflow.com/questions/10049557/reading-all-files-in-a-directory-store-them-in-objects-and-send-the-object#answer-10049704
 var pages = [];
@@ -23,6 +30,16 @@ pages.forEach(function(page) {
     }
 });
 
+//Image Optimization
+gulp.task('optimizeImages', function () {
+    return gulp.src(paths.imgSrc)
+        .pipe(imagemin({
+            progressive: true,
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest(paths.imgDest));
+});
+
 gulp.task('clean', function () {
   themes.forEach(function(theme) {
     return gulp.src(theme, {read: false})
@@ -32,4 +49,4 @@ gulp.task('clean', function () {
     .pipe(clean());
 });
 
-gulp.task('build', ['clean']);
+gulp.task('build', ['optimizeImages','clean']);

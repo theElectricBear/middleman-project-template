@@ -1,0 +1,59 @@
+{
+  "name": "index",
+  "title": "Middleman Project Template",
+  "sections": [
+    {
+      "template": "carousel",
+      "headline": "Carousel Headline",
+      "cta": "theme1 index page section 1 cta"
+    },
+    {
+      "template": "grid",
+      "headline": "Grid Headline",
+      "cta": "theme1 index page section 1 cta",
+      "content": [
+      	{
+      		"src" : "grid-one.jpg",
+      		"headline": " lorem ipsum",
+      		"alt": "morsem ipsum"
+ 		},
+      	{
+      		"src" : "grid-two.jpg",
+      		"headline": " lorem ipsum",
+      		"alt": "morsem ipsum"
+ 		},
+      	{
+      		"src" : "grid-three.jpg",
+      		"headline": " lorem ipsum",
+      		"alt": "morsem ipsum"
+ 		},
+ 		{
+      		"src" : "grid-four.jpg",
+      		"headline": " lorem ipsum",
+      		"alt": "morsem ipsum"
+ 		},
+ 		{
+      		"src" : "grid-five.jpg",
+      		"headline": " lorem ipsum",
+      		"alt": "morsem ipsum"
+ 		},
+      	{
+      		"src" : "grid-six.jpg",
+      		"headline": " lorem ipsum",
+      		"alt": "morsem ipsum"
+ 		},
+      	{
+      		"src" : "grid-seven.jpg",
+      		"headline": " lorem ipsum",
+      		"alt": "morsem ipsum"
+ 		},
+ 		{
+      		"src" : "grid-eight.jpg",
+      		"headline": " lorem ipsum",
+      		"alt": "morsem ipsum"
+ 		}
+      ]
+    }
+  ]
+}
+
