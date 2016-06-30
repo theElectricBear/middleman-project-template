@@ -21,6 +21,5 @@ node_modules/
 *.log
 
 # ignore build dirs
-build/
 theme1/
 theme2/
